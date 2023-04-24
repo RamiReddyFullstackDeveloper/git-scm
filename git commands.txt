@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#Create a project in your local using beloc maven command
+ mvn archetype:generate -DgroupId=com.sample.webproject -DartifactId=maven-web-app -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+													#here -DartifactId= = <project-name>"
+#cd maven-web-app  
+
+#then do the following commands to push maven-web-app project into central repo.
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/RamiReddyFullstackDeveloper/maven-web-app.git
+git push -u origin main
+
+#github username = ramireddy
+#password: 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
+
+#to see the list of git configurations
+git config --list
+
+
+Erros:
+fatal: remote origin already exists.
+Solutions: $ git remote set-url origin <git-repo>
