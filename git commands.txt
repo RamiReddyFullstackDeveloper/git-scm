@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Create a project in your local using beloc maven command
+#Create a project in your local using below maven command
  mvn archetype:generate -DgroupId=com.sample.webproject -DartifactId=maven-web-app -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 													#here -DartifactId= = <project-name>"
 #cd maven-web-app  
