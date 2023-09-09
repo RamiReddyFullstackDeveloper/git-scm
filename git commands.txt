@@ -1,5 +1,17 @@
 #!/bin/bash
 
+#Installing Git In AWS
+=======================
+
+Step 1: At first, the console of the AWS server should be opened. There the following command should be executed first. This command will help to download & install Git directly at the AWS server. First, it will download the Git & then it will start installing on the server. It will take time.
+
+ $ yum install git -y
+ 
+Step 2: Now it will ask for permission to continue the installation. We have to insert ‘y’ to start the installation. Wait till the installation is completed.
+Step 3: After installation is completed, the below command should run. This command will prompt the installed version of Git in the AWS server. Hence, the installation is completed.
+	$ git --version
+
+
 #Create a project in your local using below maven command
  mvn archetype:generate -DgroupId=com.sample.webproject -DartifactId=maven-web-app -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 													#here -DartifactId= = <project-name>"
@@ -15,12 +27,32 @@ git remote add origin https://github.com/RamiReddyFullstackDeveloper/maven-web-a
 git push -u origin main
 
 #github username = ramireddy
-#password: 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
+#password: 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
 
 #to see the list of git configurations
 git config --list
 
+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
 
 Erros:
 fatal: remote origin already exists.
 Solutions: $ git remote set-url origin <git-repo>
+
+#Note: When you get below error while merging
+Git refusing to merge unrelated histories on rebase
+
+Solutions: $ git pull origin branchname --allow-unrelated-histories
+
+#E:\AWS Sample Projects by AWS\core-java-master-api>git pull origin
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+Solutions: git remote add origin https://github.com/RamiReddyFullstackDeveloper/maven-web-app.git
+           git push -u origin main
+		   
+#E:\AWS Sample Projects by AWS\core-java-master-api>git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'origin'
+Solutions: git branch
+           git checkout -b main
